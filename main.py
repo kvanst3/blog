@@ -67,7 +67,7 @@ class Comment(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey('blog_posts.id'))
     parent_post = relationship("BlogPost", back_populates="comments")
 
-# db.create_all()
+db.create_all()
 gravatar = Gravatar(app, size=100, rating='g', default='retro', force_default=False, force_lower=False, use_ssl=False, base_url=None)
 
 def admin_only(f):
